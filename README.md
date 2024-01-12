@@ -8,17 +8,17 @@ Hi
 
 Those are the OpenMM scripts I wrote for OpenMM +v7.6 to make our lives a bit easier. Here you should find:
 
-1- EquNVT_c36.py
-2- EquNPT_c36.py
-3- EquNPT_c36_1step.py
-4- Production_c36.py
+- EquNVT_c36.py
+- EquNPT_c36.py
+- EquNPT_c36_1step.py
+- Production_c36.py
 
 which were written using the proper MD parameters for CHARMM36 FF. 
 
 
 Also, the make_restraint.py is a script written to read a .pdb file and parses Backbone and Sidechain atoms in order to write a restraint_atoms.dat file to be used during equilibration. For more about it, run 
 
-$python make_restraint.py -h
+    $ python make_restraint.py -h
 
 
 All these files are currently being tested and so far they worked pretty well for my systems. I would really appreciate any comments or suggestions to make them more failproof =)
@@ -77,11 +77,11 @@ VI    -> Boxsize is automatically read from the provided -state file, EXCEPT for
 Example of equilibrating a system on c36 to run a production run on Drude:
 
 
-$ python EquNVT_c36.py -psf 1aki_full.psf -pdb 1aki.min.pdb -toppar toppar_C36.str -boxsize 7.0 7.0 7.0 -runtime 1000 -dt 2 -savefreq 10 -printfreq 10 -temp 298 -outname 1aki.nvt
+    $ python EquNVT_c36.py -psf 1aki_full.psf -pdb 1aki.min.pdb -toppar toppar_C36.str -boxsize 7.0 7.0 7.0 -runtime 1000 -dt 2 -savefreq 10 -printfreq 10 -temp 298 -outname 1aki.nvt
 [simulation time = 1 ns; time step = 2 fs; temperature 298 K; pressure = 1 bar (default)]
 
 
-$ python EquNPT_c36.py -psf 1aki_full.psf -pdb 1aki.nvt.pdb -toppar toppar_C36.str -state 1aki.nvt.rst -runtime 1000 -dt 2 -savefreq 10 -printfreq 10 -temp 298 -outname 1aki.npt
+    $ python EquNPT_c36.py -psf 1aki_full.psf -pdb 1aki.nvt.pdb -toppar toppar_C36.str -state 1aki.nvt.rst -runtime 1000 -dt 2 -savefreq 10 -printfreq 10 -temp 298 -outname 1aki.npt
 [simulation time = 1 ns; time step = 2 fs; temperature 298 K; pressure = 1 bar (default)]
 
 
