@@ -1,0 +1,1 @@
+-psf step3_pbcsetup.psf -crd step3_pbcsetup.crd -toppar toppar_omm.str -state pot_cla_wat.c36.npt.rst -runtime_unrestrained 200 -runtime_decrvol 25 -runtime_minvol 100 -maxdist 30 -decrease_steps 2 -minvol_factor 0.3 -nstride 3 -savefreq 1 -printfreq 10 -outname test
